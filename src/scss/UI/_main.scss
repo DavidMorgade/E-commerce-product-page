@@ -1,0 +1,198 @@
+@use 'base/mixins' as m;
+@use 'base/variables' as v;
+
+.main {
+
+    &__cont {
+        display: grid;
+    }
+    &__textheading {
+        color: v.$primary;
+        text-transform: uppercase;
+        font-size: 1rem;
+        line-height: 1.8;
+        font-weight: bold;
+        letter-spacing: 0.2rem;
+    }
+    &__heading {
+        font-weight: bold;
+        
+    }
+    &__products {
+        width: 100%;
+    }
+    &__thumbs {
+        display: none;
+    }
+    &__description {
+        color: v.$darkBlue;
+    }
+    &__prizecontainer {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        align-items: center;
+    }
+    &__prize {
+        font-weight: bold;
+        font-size: 3rem;
+        margin-right: 1rem;
+    }
+    &__discount {
+        color: v.$primary;
+        width: 5rem;
+        text-align: center;
+        background-color: v.$secondary;
+        border-radius: 0.5rem;
+    }
+    &__prize--discounted {
+        justify-self: flex-end;
+        color: v.$grayBlue;
+        font-weight: bold;
+        text-decoration: line-through;
+    }
+    &__form {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    &__input {
+        display: flex;
+        background-color: v.$gray;
+        height: 5rem;
+        width: 90%;
+        justify-content: space-between;
+        align-items: center;
+        border-radius: 1rem;
+        overflow-y: hidden;
+        &--icon {
+            padding: 0 2rem;
+            cursor: pointer;
+
+            &:hover {
+                transition: opacity 500ms;
+                opacity: 0.2;
+            }
+        }
+    }
+    &__btn {
+        margin: 2rem 0 6rem;
+        width: 90%;
+        height: 5rem;
+        background-color: v.$primary;
+        color: v.$white;
+        font-weight: bold;
+        font-family: v.$primaryFont;
+        border: none;
+        border-radius: 1rem;
+        &:hover {
+            transition: opacity 500ms;
+            opacity: 0.5;
+            box-shadow: 0 3px 7px v.$secondary
+        }
+        
+        cursor: pointer;
+        img {
+            margin-right: 1rem;
+            width: 1.5rem;
+            height: 1.5rem;
+
+        }
+    }
+}
+@include m.tablet {
+    .main {
+        margin-top: 10rem;
+        &__cont {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10rem;
+        }
+        &__products {
+            display: grid;
+            grid-template-rows: 75% 25%;
+        }
+        &__productimg {
+            border-radius: 1rem;
+            height: 100%;
+            margin: 0 auto;
+            display: block;
+            cursor: pointer;
+        }
+        &__thumbs {
+            grid-row: 2 / 3;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            align-items: center;
+            
+            
+             img {
+                width: 75%;
+                border-radius: 1rem;
+                justify-self: center;
+                cursor: pointer;
+
+                &:nth-child(1) {
+                    opacity: 0.2;
+                }
+             }
+        }
+        &__blocktext {
+            margin-top: 5rem;
+        }
+        &__textheading {
+            font-size: 1.4rem;
+        }
+        &__heading {
+            
+            span {
+                display: block;
+            }
+        }
+        &__prizecontainer {
+            width: 25rem;
+            display: grid;
+            grid-template-rows: 60% 40%;
+            grid-template-columns: 50% 50%;
+            align-items: center
+        }
+        &__prize {
+            margin: 0;
+            &--discounted {
+                justify-self: flex-start;
+                margin: 0;
+            }
+        }
+        &__discount {
+            grid-column: 2 / 3;
+            grid-row: 1 / 2;
+        }
+        &__form {
+            margin-top: 3rem;
+            flex-direction: row;
+            justify-content: center;
+            gap: 1.5rem;
+            width: 70%;
+        }
+        &__input {
+            width: 40%;
+
+
+        }
+        &__btn {
+            margin: 0;
+            width: 60%;
+        }
+
+    }
+}
+.footer {
+    text-align: center;
+    &__heading {
+        color: v.$darkBlue;
+        
+        span {
+            color: v.$varkBlue;
+            
+        }
+    }
+}

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <script defer src="build/js/app.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@400;700&family=Kumbh+Sans:wght@400;700&display=swap" rel="stylesheet"> 
+  <link rel="icon" type="image/png" sizes="32x32" href="build/img/favicon-32x32.png">
+  <link rel="stylesheet" href="build/css/app.css">
+  <link
+  rel="stylesheet"
+  href="https://unpkg.com/swiper@8/swiper-bundle.min.css"
+/>
+  <title>Frontend Mentor | E-commerce product page</title>
+</head>
+<body>
+  <div class="notification hidden">
+    <div class="notification__cont">
+      <h2 class="notification__heading">¡Your shopping cart has been updated!</h2>
+    </div>
+  </div>
+  <div class="modal hidden">
+    <img loading="lazy" class="modal__close" src="build/img/icon-close.svg" alt="close modal">
+    <!-- Slider main container -->
+    <div class="swiper">
+      <!-- Additional required wrapper -->
+      <div class="swiper-wrapper">
+        <!-- Slides -->
+        <div class="swiper-slide opacity-1"><img loading="lazy"  class="opacity-1" src="build/img/image-product-1.jpg" alt=""></div>
+        <div class="swiper-slide opacity-1"><img loading="lazy" class="opacity-1" src="build/img/image-product-2.jpg" alt=""></div>
+        <div class="swiper-slide opacity-1"><img loading="lazy" class="opacity-1" src="build/img/image-product-3.jpg" alt=""></div>
+        <div class="swiper-slide opacity-1"><img loading="lazy" class="opacity-1" src="build/img/image-product-4.jpg" alt=""></div>
+      </div>
+      <!-- If we need pagination
+      <div class="swiper-pagination"></div> -->
+
+      <!-- If we need navigation buttons -->
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+    </div>
+
+  </div>
+  <div class="mobile hidden">
+    <div class="mobile__cont">
+      <img loading="lazy" class="mobile__close" src="build/img/icon-close.svg" alt="icon close window">
+      <nav class="mobile__nav">
+        <a href="#">Collections</a>
+        <a href="#">Men</a>
+        <a href="#">Women</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+      </nav>
+    </div>
+  </div>
+  </div>
+  <header class="container header">
+    <img loading="lazy" id="header__menu" src="build/img/icon-menu.svg" alt="icon menu">
+    <h1 class="header__heading">sneakers</h1>
+    <nav class="header__nav">
+      <a href="#">Collections</a>
+      <a href="#">Men</a>
+      <a href="#">Women</a>
+      <a href="#">About</a>
+      <a href="#">Contact</a>
+    </nav>
+    <div class="header__right">
+      <a class="header__link">
+        <img loading="lazy" id="shop-cart" src="build/img/icon-cart.svg" alt="cart image">
+        <div class="items hidden">
+          <h5 class="items__number">0</h5>
+        </div>
+      </a>
+      <img loading="lazy" src="build/img/image-avatar.png" alt="avatar image">
+    </div>
+  </header>
+  <main class="main">
+    <div class="main__modal hidden">
+      <h3>Cart</h3>
+      <div class="main__modal--empty">
+        <h4>Your cart is empty.</h4>
+      </div>
+      <div class="main__modal--item hidden">
+        <div class="main__modal--top">
+          <img loading="lazy" src="build/img/image-product-1-thumbnail.jpg" alt="thumbnail sneakers">
+          <div class="main__modal--desc">
+            <h4>Fall Limited Edition Sneakers</h4>
+            <div class="main__modal--prizes">
+              <p>$<span class="prize">125</span>  x <span class="total__items">0</span> <span> $</span><span class="total__pay">0</span></p>
+            </div>
+          </div>
+          <img loading="lazy" class="main__modal--trash" src="build/img/icon-delete.svg" alt="trashcan icon">
+        </div>
+        <button class="main__modal--btn">
+          Checkout
+        </button>
+      </div>
+    </div>
+
+    <div class="main__cont container">
+      <div class="main__products">
+        <img loading="lazy" data="1" class="main__productimg current" src="build/img/image-product-1.jpg" alt="sneakers image">
+        <div class="main__thumbs">
+          <img loading="lazy" data-type="1" src="build/img/image-product-1-thumbnail.jpg" alt="sneakers icon">
+          <img loading="lazy" data-type="2" src="build/img/image-product-2-thumbnail.jpg" alt="sneakers icon">
+          <img loading="lazy" data-type="3" src="build/img/image-product-3-thumbnail.jpg" alt="sneakers icon">
+          <img loading="lazy" data-type="4" src="build/img/image-product-4-thumbnail.jpg" alt="sneakers icon">
+        </div>
+      </div>
+      <!-- SLIDER FOR PHONE -->
+      <div class="swiper phone-swiper">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+          <!-- Slides -->
+          <div class="swiper-slide"><img loading="lazy" src="build/img/image-product-1.jpg" alt=""></div>
+          <div class="swiper-slide"><img loading="lazy" src="build/img/image-product-2.jpg" alt=""></div>
+          <div class="swiper-slide"><img loading="lazy" src="build/img/image-product-3.jpg" alt=""></div>
+          <div class="swiper-slide"><img loading="lazy" src="build/img/image-product-4.jpg" alt=""></div>
+          ...
+        </div>
+        <!-- If we need pagination -->
+        <!-- <div class="swiper-pagination"></div> -->
+
+        <!-- If we need navigation buttons -->
+        <!-- <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div> -->
+      </div>
+
+      <div class="main__blocktext">
+        <h2 class="main__textheading">Sneaker Company</h2>
+        <h2 class="main__heading">Fall Limited Edition <span> Sneakers</span></h2>
+        <p class="main__description">There low-profile sneakers are your perfect casual wear companion. Featuring a durable rubber outer sole, they'll withstand everything the weather can offer.
+        </p>
+        <div class="main__prizecontainer">
+          <p class="main__prize">$125.00</p>
+          <p class="main__discount">50%</p>
+          <p class="main__prize--discounted">$250.00</p>
+        </div>
+        <form action="" class="main__form">
+          <div class="main__input">
+            <img loading="lazy" class="main__input--icon" src="build/img/icon-minus.svg" alt="next number">
+            <h5 class="main__input--number">0</h5>
+            <img loading="lazy" class="main__input--icon" src="build/img/icon-plus.svg" alt="next number">
+          </div>
+          <button type="button" class="main__btn"> <img loading="lazy" src="build/img/pngaaa.com-3531901.png" alt=""> Add to cart</button>
+        </form>
+      </div>
+    </div>
+  </main>
+  <footer class="container footer">
+    <p class="footer__heading">Challenge by Frontend Mentor. Coded by <span>David MG. </span> </p>
+  </footer>
+</body>
+<script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+</html>

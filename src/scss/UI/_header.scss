@@ -1,0 +1,92 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    &__heading {
+        font-size: 3rem;
+        font-weight: bold;
+
+        
+    }
+    &__nav {
+        display: none;
+
+        a {
+            padding: 7rem 0;
+            border-bottom: 0px solid v.$gray;        
+
+            &:hover {
+                color: v.$varkBlue;
+                border-bottom: 0.4rem solid v.$primary;
+                padding-bottom: 0px;
+            }
+        }
+    }
+    &__link {
+        display: flex;
+        padding: 2rem 0;
+    }
+    &__right {
+        width: 7rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        
+        img:nth-child(1):hover {
+            filter:  brightness(10) invert(1);
+        }
+        img:nth-child(2) {
+            width: 2.5rem;
+            padding-bottom: 0.3rem;
+        }
+    }
+    img {
+        cursor: pointer;
+    }
+}
+#header__menu {
+    &:hover {
+        transition: filter 1s;
+        filter: brightness(10) invert(1);
+    }
+}
+@include m.tablet {
+    #header__menu {
+        display: none;
+    }
+    .header {
+        gap: 5rem;
+        margin-top: 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 2px solid v.$gray;
+        &__heading {
+            font-weight: bold;
+            width: 28%;
+        }
+        &__nav {
+            width: 70rem;
+            display: flex;
+            justify-content: flex-start;
+            gap: 3rem;
+            
+            a {
+                color: v.$darkBlue;
+            }
+        }
+        &__right {
+            width: 15rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+
+            img:nth-child(2) {
+                width: 4rem;
+            }
+        }
+    }
+}

@@ -1,0 +1,36 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+@include m.onlyPhone {
+    .main__products {
+        display: none;
+    }
+}
+.swiper {
+    width: 35rem;
+    opacity: 1;
+
+    &-slide {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+@include m.tablet {
+    .phone-swiper {
+        display: none;
+    }
+    .modal {
+        
+        .swiper {
+            width: 50rem;
+            height: 60rem;
+        }
+    }
+    .swiper2 {
+        width: 50rem;
+        height: 20rem;
+        justify-content: center;
+
+    }
+}
